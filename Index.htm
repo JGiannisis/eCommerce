@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html>
+
+	<head>
+		<title> Gold and Silver Pawn Shop </title>
+	
+		<style>
+		body{
+		text-align: center;
+		}
+		body{background-color:AntiqueWhite;
+		}
+		img {width:300px;
+		}
+		input{width:50px;
+		}
+		#output:hover{
+			background-color: black;
+			color: white;
+			font-size:35px;
+		}
+		
+			
+		</style>
+		<script>
+		function calculate(){
+			var item1 = parseFloat(document.getElementById("quantity1").value);
+			var item2 = parseFloat(document.getElementById("quantity2").value);
+			var item3 = parseFloat(document.getElementById("quantity3").value);
+			var quantity = (item1 + item2 + item3);
+			var subtotal = (item1 * 100)+(item2 * 5000)+(item3 * 10000);
+			var tax = subtotal*0.0875;
+			var shipping = "";
+				if (subtotal < 100){
+					shipping += 25;
+				} else if (subtotal <200){
+					shipping += 10;
+				} else{
+					shipping += 0;
+				}
+			var total = (subtotal + tax + shipping);
+			var wholesale = (item1 * 75)+(item2 * 4500)+(item3 * 9000);
+			var profit = (subtotal-wholesale);
+			output.innerHTML ="The Amount of Items Sold is: " + quantity + "<br>" + "The Subtotal is: $" + subtotal + "<br>" + "The Tax is: $" + tax + "<br>" + "The Shipping is: $"+ shipping + "<br>" + "<u>"+"The Total is: $" + total + "<br>"+"</u>" + "The Wholesale price is: $" + wholesale + "<br>" + "The profit is: $" + profit;
+			}
+		</script>
+	</head>
+	<body>
+		<center><div id = "output"> Sale details </div></center>
+		<div>
+			<h1> Premium Roblox Account </h1>
+			<img src="premium.jpg"><br>
+			<span> $100 </span>
+			<p> This is the best roblox account in the entire world. You have infinite money on this account. Buy it or its gone. </p>
+			Quantity<input type="text" id="quantity1" placeholder="Amount" value=0>
+			<button onclick="calculate()">Amount</button>
+		</div>
+		
+		<div>
+			<h1> Premium Rice Field </h1>
+			<img src="ricefield.jpg"><br>
+			<span> $5,000 </span>
+			<p>  Ever wanted to cultivate your own rice? Well now you can! This field is located in Vietnam. </p>
+			Quantity<input type="text" id="quantity2" placeholder="Amount" value=0>
+			<button onclick="calculate()">Amount</button>
+		</div>
+		<div>
+			<h1> The Entirety of Japan </h1>
+			<img src="watashi.png"><br>
+			<span> $10,000 </span>
+			<p> You ever wanted to own EVERY SQUARE INCH of Japan? Well now you can! </p>
+			Quantity<input type="text" id="quantity3" placeholder="Amount" value=0>
+			<button onclick="calculate()">Amount</button>
+		</div>
+		
+	</body>
+</html>
+
